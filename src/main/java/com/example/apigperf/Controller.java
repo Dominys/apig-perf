@@ -20,7 +20,7 @@ public class Controller {
     @GetMapping("/object")
     public Mono<Response> getEmployeeById(@RequestParam String id) {
         return Mono.just(id)
-                .delayElement(Duration.ofSeconds(2L))
+                .delayElement(Duration.ofMillis(100L))
                 .map(f -> Response.builder().value(f).build());
     }
 
